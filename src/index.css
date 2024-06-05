@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Kanit', sans-serif;
+}
+
+/*Home Section*/
+.name{
+  background: radial-gradient(circle at 0.4% -0.6%, rgb(143, 170, 210) 0%, rgb(255, 177, 177) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profession{
+  background: radial-gradient(circle at 0.4% -0.6%, rgb(143, 170, 210) 0%, rgb(255, 177, 177) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.knowBtn .ba{
+  background: radial-gradient(circle at 0.4% -0.6%, rgb(143, 170, 210) 0%, rgb(255, 177, 177) 90%);
+  color: #fff;
+}
+
+.knowBtn .ba:hover{
+  background: radial-gradient(circle at 0.4% -0.6%, rgb(255, 177, 177) 0%, rgb(143, 170, 210) 90%);
+}
+
+/*About Section*/
+.about {
+   background: radial-gradient(circle at 0.4% -0.6%, rgb(143, 170, 210) 0%, rgb(255, 177, 177) 90%);
+   color: white;
+}
+
+/*Project Section*/
+.btnLive, .btnSource{
+  background: radial-gradient(circle at 0.4% -0.6%, rgb(143, 170, 210) 0%, rgb(255, 177, 177) 90%);
+  color: white;
+}
+
+.moreLessBtn .ba{
+  background: radial-gradient(circle at 0.4% -0.6%, rgb(143, 170, 210) 0%, rgb(255, 177, 177) 90%);
+  color: #fff;
+}
+ 
+.moreLessBtn .ba:hover{
+  background: radial-gradient(circle at 0.4% -0.6%, rgb(255, 177, 177) 0%, rgb(143, 170, 210) 90%);
+}
+
+/*
+   Start animating delayed projects.
+   You need to increment for each project by writing row.#(next id number).
+*/
+.row #four{
+  animation-delay:1s;
+}
+
+.row #five{
+  animation-delay: 2s;
+}
+/* Finish animating delay projects. */
+
+/*Contact Section*/
+.contacts {
+  background: radial-gradient(circle at 0.4% -0.6%, rgb(143, 170, 210) 0%, rgb(255, 177, 177) 90%);
+}
+
+.contacts .sendBtn b{
+  color: white;
+}
+
+.contacts .sendBtn .sendIcon{
+  color: white
+}
+
+/*Footer Section*/
+.footer .copy{
+  color: rgb(255, 177, 177);
+}
+
+.icon{
+  color: rgb(255, 177, 177);
+}
+
+.footer h6 a{
+  color: rgb(255, 177, 177);
+}
+
+.footer h6 a span:hover{
+  color: rgb(143, 170, 210);
+}
