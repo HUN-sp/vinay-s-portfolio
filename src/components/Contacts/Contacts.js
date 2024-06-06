@@ -23,7 +23,7 @@ const Contacts = () => {
     };
 
     return (
-        <div className="contacts">
+        <div id="contact" className="contacts">
             <Container className="tc form">
                 <h1 className=" white tc">Contact me</h1>
                 <Form ref={form} className="tc" onSubmit={sendEmail}>

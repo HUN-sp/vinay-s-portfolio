@@ -17,7 +17,7 @@ const ProjectsCard = () => {
     }
 
     return (
-        <Container className="projects">
+        <Container id="projects" className="projects">
             <h1 className="tc navy">Projects</h1>
 
             {
