@@ -783,3 +783,14 @@
         font-size: 10px;
     }
 }
+
+    .navbar-toggler {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+  
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+  }
+  
