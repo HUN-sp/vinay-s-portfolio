@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
-import ProfilImage from "./profilImage.jpg";
+import ProfilImage from "./profile-img.jpg";
 
 function About() {
     return (
