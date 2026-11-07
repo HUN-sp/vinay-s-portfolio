@@ -1,0 +1,104 @@
+/* Fonts: Latin subsets only, self-hosted (SIL OFL, see LICENSE-*.txt next to the files). */
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('../assets/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/geist-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../assets/fonts/geist-mono-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-display: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --step--1: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --step-1: clamp(1.1875rem, 1.12rem + 0.3vw, 1.375rem);
+  --step-2: clamp(1.5rem, 1.35rem + 0.7vw, 1.875rem);
+  --step-3: clamp(1.875rem, 1.6rem + 1.3vw, 2.5rem);
+  --step-5: clamp(2.875rem, 2.1rem + 3.8vw, 5rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-section: clamp(3.5rem, 8vw, 7rem);
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --gutter: clamp(1rem, 5vw, 2rem);
+  --max: 68rem;
+  --header-h: 3.5rem;
+
+  /* Dark is the default. */
+  color-scheme: dark;
+  --bg: #0d0e10;
+  --bg-raised: #14161a;
+  --bg-code: #1b1e24;
+  --border: #272b34;
+  --border-strong: #3a404c;
+  --text: #ecebe7;
+  --text-2: #b9bdc4;
+  --muted: #9aa1ab;
+  --accent: #f2b45b; /* the one accent: text, lines, focus */
+  --accent-fill: #f2b45b; /* button background */
+  --accent-ink: #1b1305; /* text on --accent-fill */
+  --accent-soft: rgba(242, 180, 91, 0.12);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #fbfaf7;
+  --bg-raised: #ffffff;
+  --bg-code: #f0eee8;
+  --border: #e6e2d8;
+  --border-strong: #cdc7b8;
+  --text: #17181b;
+  --text-2: #3b4048;
+  --muted: #565c66;
+  --accent: #8a4e00;
+  --accent-fill: #f0b050;
+  --accent-ink: #1b1305;
+  --accent-soft: rgba(138, 78, 0, 0.09);
+  --shadow: 0 1px 2px rgba(23, 24, 27, 0.04), 0 12px 32px -20px rgba(23, 24, 27, 0.25);
+}
+
+/* No-JS fallback: follow the system if the inline script didn't set a theme. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --bg: #fbfaf7;
+    --bg-raised: #ffffff;
+    --bg-code: #f0eee8;
+    --border: #e6e2d8;
+    --border-strong: #cdc7b8;
+    --text: #17181b;
+    --text-2: #3b4048;
+    --muted: #565c66;
+    --accent: #8a4e00;
+    --accent-fill: #f0b050;
+    --accent-ink: #1b1305;
+    --accent-soft: rgba(138, 78, 0, 0.09);
+    --shadow: 0 1px 2px rgba(23, 24, 27, 0.04), 0 12px 32px -20px rgba(23, 24, 27, 0.25);
+  }
+}
