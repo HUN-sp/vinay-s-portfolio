@@ -3,10 +3,9 @@ import { A } from './ExternalLink';
 import { Inline } from './Inline';
 import { MailIcon } from './Icons';
 import { Rotator } from './Rotator';
-import { Todos } from './Todo';
 
 export function Hero() {
-  const { name, positioning, status, links, email, heroCards, tagline, education, availability, todos } = profile;
+  const { name, positioning, status, links, email, heroCards, tagline, education, availability } = profile;
   return (
     <section id="top" className="hero" aria-labelledby="hero-title">
       <figure className="hero__portrait">
@@ -21,10 +20,12 @@ export function Hero() {
       </figure>
 
       <div className="hero__center">
-        <p className="status" data-reveal>
-          <span className="status__dot" aria-hidden="true" />
-          {status}
-        </p>
+        {status ? (
+          <p className="status" data-reveal>
+            <span className="status__dot" aria-hidden="true" />
+            {status}
+          </p>
+        ) : null}
         <h1 id="hero-title" data-reveal>
           {name}
         </h1>
@@ -52,7 +53,6 @@ export function Hero() {
           {education.degree}, {education.school}, {education.years}. CGPA {education.cgpa}.
           {availability ? ` ${availability}` : ''}
         </p>
-        <Todos items={todos} />
       </div>
 
       <ul className="hero__cards" aria-label="Highlights">

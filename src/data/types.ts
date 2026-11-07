@@ -23,8 +23,8 @@ export interface Profile {
   name: string;
   /** One-line positioning shown under the name. */
   positioning: string;
-  /** Short status line shown above the name. */
-  status: string;
+  /** Optional short status line shown above the name. Leave undefined to hide. */
+  status?: string;
   education: { school: string; degree: string; years: string; cgpa: string };
   email: string;
   links: {

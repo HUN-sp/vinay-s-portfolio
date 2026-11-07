@@ -15,7 +15,7 @@ export const openSource: OpenSource = {
       title: '`r.resamp.stats`: OpenMP parallelization with memory chunking',
       milestone: '8.6.0',
       summary:
-        'Parallelized the resampler with OpenMP and per-thread buffers, with a benchmark script and a pytest suite that checks the results. The first draft was a proof of concept (about 3× on a 30k × 30k raster with 12 threads, only the `average` and `median` methods tested); the merged version adds the benchmark and the tests.',
+        'Parallelized the resampler with OpenMP and per-thread buffers, with a benchmark script and a pytest suite that checks the results. The first draft was a proof of concept (about 3× on a 30k × 30k raster with 12 threads, only the `average` and `median` methods tested); the merged version adds the benchmark and the tests. The “up to ~4.7×” figure comes from the benchmark I posted in the PR thread: 1.86 s serial vs 0.39 s with 10 threads on a 50M-cell raster (4.74×; 4.12× at 100M cells, 4.51× at 200M), on an AMD Ryzen 5600H.',
       href: PR(7044),
     },
     {
@@ -50,10 +50,5 @@ export const openSource: OpenSource = {
         'Modernized the `btree` and `linkm` test programs: replaced the unsafe `gets()` with `fgets()` and fixed incompatible pointer types and implicit function declarations.',
       href: PR(7097),
     },
-  ],
-
-  todos: [
-    'TODO(vinay): confirm which benchmark run produced “up to ~4.7×” for `r.resamp.stats` (threads, raster size, method). It is not in the public text of PR #7044, whose first draft reports ~3×.',
-    'TODO(vinay): your resume says “4 merged PRs”; GitHub shows 5 merged (this page lists all 5). Update one or the other.',
   ],
 };
