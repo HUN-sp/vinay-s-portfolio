@@ -24,7 +24,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     results: [
       'Eval on 10 answerable, unanswerable and paraphrased questions: 6 correct, 2 correct refusals, 1 wrong, 1 false refusal. Every question, answer, source and verdict is written up.',
-      'A retrieval harness checks whether the answer-bearing chunk lands in the top 8 without calling the LLM. First measurement: 10 of 17.',
+      'A retrieval harness checks whether the answer-bearing chunk lands in the top 8 without calling the LLM. Measured at 10 of 17.',
     ],
     limits: [
       'Both failures had the same cause: terse numeric rows (net profit, a dividend note) ranked below fluent prose. The wrong answer reported a ₹9,179.40 crore share-sale gain instead of net profit.',
@@ -60,7 +60,7 @@ export const caseStudies: CaseStudy[] = [
       'End-to-end booking works: availability, slot choice, name and email, calendar event with a Meet link.',
     ],
     limits: [
-      'Calendar credentials were silently `undefined` in deployment. The error was swallowed and the assistant told people there were no free slots. I fixed the configuration, and the lesson stuck: a catch block that returns an empty list turns an outage into a confident wrong answer.',
+      'Calendar credentials were silently `undefined` in deployment. The error was swallowed and the assistant told people there were no free slots. The cause was a `catch` block that returned an empty list, which turned a configuration outage into a confident wrong answer. I fixed the configuration.',
       'A slot cap of 15 filled up with a single day, so no other day was ever offered. The booking flow now shows days with slot counts first, then times.',
       'Next: a guard against two callers booking the same slot, and an automated eval suite, because today’s numbers come from manual runs.',
     ],
@@ -76,7 +76,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Aadhaar Seva Radar',
     tagline: 'UIDAI Data Hackathon: where do child biometric updates lag behind enrolments?',
     problem:
-      'Given Aadhaar enrolment, demographic-update and biometric-update records, find where updates for children aged 5–17 fall behind enrolments, and which pincodes to prioritise.',
+      'Given Aadhaar enrolment, demographic-update and biometric-update records, find where updates for children aged 5–17 fall behind enrolments, and which pincodes to prioritize.',
     approach: [
       'Merged the three datasets (about 4.9M rows) into a pincode-level table of 31,777 pincodes.',
       'Filtered to the 3,801 pincodes with more than 100 enrolled children aged 5–17, to cut noise from tiny pincodes.',

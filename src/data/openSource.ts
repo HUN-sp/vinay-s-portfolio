@@ -8,16 +8,16 @@ export const openSource: OpenSource = {
   intro:
     'Five merged pull requests into the GRASS GIS C and Python codebase, in milestones 8.5.0 and 8.6.0. Each one links to the PR, so the review history is public.',
   stack: ['C', 'Python', 'pytest', 'OpenMP', 'gprof', 'GCC / Clang'],
-  headlineStat: { value: '~4.7×', label: 'up to, on the parallelised `r.resamp.stats`' },
+  headlineStat: { value: '~4.7×', label: 'up to, on the parallelized `r.resamp.stats`' },
 
   // Order: biggest first.
   pullRequests: [
     {
       number: 7044,
-      title: '`r.resamp.stats`: OpenMP parallelisation with memory chunking',
+      title: '`r.resamp.stats`: OpenMP parallelization with memory chunking',
       milestone: '8.6.0',
       summary:
-        'Parallelised the resampler with OpenMP and per-thread buffers, with a benchmark script and a pytest suite that checks the results. The first draft was a proof of concept (about 3× on a 30k × 30k raster with 12 threads, only the `average` and `median` methods tested); the merged version adds the benchmark and the tests.',
+        'Parallelized the resampler with OpenMP and per-thread buffers, with a benchmark script and a pytest suite that checks the results. The first draft was a proof of concept (about 3× on a 30k × 30k raster with 12 threads, only the `average` and `median` methods tested); the merged version adds the benchmark and the tests.',
       href: PR(7044),
     },
     {
@@ -38,10 +38,10 @@ export const openSource: OpenSource = {
     },
     {
       number: 7005,
-      title: '`r.surf.fractal`: optimise memory initialisation',
+      title: '`r.surf.fractal`: optimize memory initialization',
       milestone: '8.5.0',
       summary:
-        'Profiling with `gprof` pointed at the array-reset routine. Replaced the manual initialisation loop with `G_zero()`.',
+        'Profiling with `gprof` pointed at the array-reset routine. Replaced the manual initialization loop with `G_zero()`.',
       href: PR(7005),
     },
     {
@@ -49,7 +49,7 @@ export const openSource: OpenSource = {
       title: '`lib`: replace deprecated `gets()` with `fgets()` in test files',
       milestone: '8.6.0',
       summary:
-        'Modernised the `btree` and `linkm` test programs: replaced the unsafe `gets()` with `fgets()` and fixed incompatible pointer types and implicit function declarations.',
+        'Modernized the `btree` and `linkm` test programs: replaced the unsafe `gets()` with `fgets()` and fixed incompatible pointer types and implicit function declarations.',
       href: PR(7097),
     },
   ],

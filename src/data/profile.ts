@@ -33,7 +33,7 @@ export const profile: Profile = {
     },
     {
       value: '5',
-      label: 'merged PRs in GRASS GIS, including a parallelised resampler (up to ~4.7×)',
+      label: 'merged PRs in GRASS GIS, including a parallelized resampler (up to ~4.7×)',
       href: '#open-source',
     },
     {
