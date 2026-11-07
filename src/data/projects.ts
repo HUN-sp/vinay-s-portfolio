@@ -113,8 +113,5 @@ export const compactProjects: CompactProject[] = [
       'No latency measurements yet, so I make no speed claim. The producer never checks whether the shared-memory reader has kept up, so a slow reader would be overwritten.',
     stack: ['C++17', 'CMake', 'POSIX shared memory', 'TCP'],
     links: [{ label: 'GitHub', href: 'https://github.com/HUN-sp/Market_Data_Publisher', kind: 'repo' }],
-    todos: [
-      'TODO(vinay): the repo has no README. Add one, and measure shared memory vs TCP latency if you want to show a result here. Drop this entry if you’d rather not show a small project.',
-    ],
   },
 ];
