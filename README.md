@@ -42,7 +42,7 @@ Delete the string from the data file when you've dealt with it. Don't deploy wit
 
 ## Deploy (Vercel)
 
-Import the repo. Vercel detects Vite: build command `npm run build`, output `dist`. Nothing to configure.
+Import the repo. `vercel.json` pins the framework (Vite), build command and output directory (`dist`), and `package.json` pins Node 22, so old dashboard settings (e.g. the previous Create React App preset with output `build`) can't break the build.
 
 Open Graph and canonical tags need absolute URLs. The build reads, in order, `SITE_URL`, `VERCEL_PROJECT_PRODUCTION_URL`, `VERCEL_URL`. If none is set it omits the canonical and `og:url` tags. Set `SITE_URL` in Vercel if you use a custom domain.
 
