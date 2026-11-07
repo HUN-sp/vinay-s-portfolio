@@ -14,7 +14,7 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <a href="#top" className="brand" aria-label={`${profile.name}, back to top`}>
+        <a href="#top" className="brand">
           <span className="brand__mark" aria-hidden="true">
             VC
           </span>

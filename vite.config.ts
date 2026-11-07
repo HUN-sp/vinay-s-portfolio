@@ -11,7 +11,14 @@ function siteUrl(): Plugin {
   const url = (process.env.SITE_URL || (host ? `https://${host}` : '')).replace(/\/$/, '');
   return {
     name: 'site-url',
-    transformIndexHtml: (html) => html.replaceAll('%SITE_URL%', url),
+    transformIndexHtml: (html) =>
+      // Without a known origin, drop the tags that must be absolute rather than emit relative ones.
+      url
+        ? html.replaceAll('%SITE_URL%', url)
+        : html
+            .replace(/\s*<link rel="canonical"[^>]*>/, '')
+            .replace(/\s*<meta property="og:url"[^>]*>/, '')
+            .replaceAll('%SITE_URL%', ''),
   };
 }
 

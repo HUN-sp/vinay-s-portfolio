@@ -37,7 +37,13 @@
   line-height: 1;
 }
 .brand__name {
-  display: none;
+  /* visually hidden on small screens but still the link's accessible name */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 .nav ul {
   display: flex;
@@ -74,7 +80,11 @@
 }
 @media (min-width: 40rem) {
   .brand__name {
-    display: inline;
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
   }
 }
 @media (min-width: 52rem) {
@@ -600,6 +610,7 @@
 }
 .site-footer__inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
   flex-wrap: wrap;

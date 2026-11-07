@@ -29,7 +29,7 @@ export const caseStudies: CaseStudy[] = [
     limits: [
       'Both failures had the same cause: terse numeric rows (net profit, a dividend note) ranked below fluent prose. The wrong answer reported a ₹9,179.40 crore share-sale gain instead of net profit.',
       'I A/B-tested a cross-encoder reranker. Recall stayed at 10/17 with or without it, and once it promoted a wrong figure, so it is off by default.',
-      'What fixed retrieval was not the reranker. Indexing each table row separately, embedded from its label text with column-labelled values, moved the harness from 10/17 to 15/17 (DECISIONS.md §3b). It still misses pure paraphrases that share no vocabulary with the filing. Later runs use `gpt-oss-120b` because Groq retired Llama 3.3 70B, which the 10-question eval used.',
+      'What fixed retrieval was not the reranker. Indexing each table row separately, embedded from its label text with column-labeled values, moved the harness from 10/17 to 15/17 (DECISIONS.md §3b). It still misses pure paraphrases that share no vocabulary with the filing. Later runs use `gpt-oss-120b` because Groq retired Llama 3.3 70B, which the 10-question eval used.',
     ],
     stack: ['Python', 'FastAPI', 'pdfplumber', 'RapidOCR', 'BGE-small', 'BM25', 'Groq Llama 3.3 70B', 'React'],
     links: [
