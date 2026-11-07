@@ -6,3 +6,4 @@ export { achievement } from './achievement';
 export { skills } from './skills';
 export { about } from './about';
 export type * from './types';
+export { sections, sectionById } from './sections';

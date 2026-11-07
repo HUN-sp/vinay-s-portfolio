@@ -19,13 +19,14 @@ All text lives in `src/data/`. Components contain no copy, so you never touch th
 
 | File | What it controls |
 |---|---|
-| `profile.ts` | Name, positioning line, status line, links, the three hero highlights, optional availability line |
+| `profile.ts` | Name, positioning line, status line, links, rotating headline words, floating hero cards, optional availability line |
 | `experience.ts` | Experience entries |
 | `openSource.ts` | GRASS GIS intro and each PR (number, title, milestone, summary, link) |
 | `projects.ts` | Case studies (problem, approach, stats, results, what failed, stack, links) and compact projects |
 | `achievement.ts` | Finalist entry |
 | `skills.ts` | Grouped skills |
 | `about.ts` | About paragraphs |
+| `sections.ts` | Section titles, italic lead lines and nav labels |
 | `types.ts` | The shapes above. TypeScript tells you if you leave a field out |
 
 Wrap code in `` `backticks` `` inside any string to render it as inline code.
@@ -48,10 +49,13 @@ Open Graph and canonical tags need absolute URLs. The build reads, in order, `SI
 
 ## Design notes
 
-- **Theme:** follows `prefers-color-scheme`, with a manual toggle remembered in `localStorage`. An inline script in `index.html` sets it before first paint to avoid a flash. If the browser gives no signal at all, it falls back to dark.
-- **Motion:** fade-in on scroll and hover states only. Everything is visible without JS and under `prefers-reduced-motion`.
-- **Colour:** one accent (amber), tuned separately for dark and light. All text pairs are WCAG AA or better.
-- **Fonts:** Instrument Serif, Geist and Geist Mono, Latin subsets only, self-hosted in `src/assets/fonts` (SIL OFL licences alongside). No third-party requests.
+- **Look:** light sky-blue bands, an electric-blue accent with orange and violet as secondary colours, big Bricolage Grotesque headings with Instrument Serif italic for accent words, and rounded cards. Each project gets its own colour tone (`tone` in `projects.ts`).
+- **Hero:** the headline word rotates (`tagline.words` in `profile.ts`); the four floating cards are `heroCards`. They float and tilt from 1408px up and sit in a grid below that.
+- **Wide screens:** a decorative scroll-progress rail on the right; the header nav highlights the current section.
+- **Theme:** light by default, follows `prefers-color-scheme`, with a manual toggle remembered in `localStorage`. An inline script in `index.html` sets it before first paint to avoid a flash.
+- **Motion:** rotating word, floating cards, scroll reveals, hover lifts. Everything stops or is fully visible under `prefers-reduced-motion`, and without JS.
+- **Accessibility:** all text colour pairs are WCAG AA or better in both themes. Skip link, landmarks, visible focus, 44px+ tap targets. The progress rail is `aria-hidden`.
+- **Fonts:** Bricolage Grotesque, Instrument Serif, Geist, Geist Mono, Latin subsets only, self-hosted in `src/assets/fonts` (SIL OFL licences alongside). No third-party requests.
 - **Images:** `public/portrait.webp` (cropped, 480px). `public/og.png` is rendered from `scripts/og.html` at 1200×630 (open it in a browser at that viewport and screenshot, or use Playwright).
 
 ## Layout

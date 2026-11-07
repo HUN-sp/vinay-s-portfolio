@@ -5,9 +5,9 @@ Mobile uses Lighthouse's default simulated throttling; desktop uses its desktop 
 
 | Form factor | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
 |---|---|---|---|---|---|---|---|
-| mobile | 99 | 100 | 100 | 100 | 2.1 s | 0 | 0 ms |
-| desktop | 100 | 100 | 100 | 100 | 0.4 s | 0 | 0 ms |
+| mobile | 97 | 100 | 100 | 100 | 2.5 s | 0 | 50 ms |
+| desktop | 100 | 100 | 100 | 100 | 0.6 s | 0 | 0 ms |
 
 Rerun against the Vercel preview once deployed: the numbers here are from a local server, not the real deployment.
 
-Production bundle: 166 kB JS (55 kB gzip), 14 kB CSS (3.6 kB gzip), four Latin-subset fonts (about 96 kB, only those used are fetched), 23 kB portrait.
+Production bundle: 170 kB JS (56 kB gzip), 23 kB CSS (5.6 kB gzip), five Latin-subset fonts (about 137 kB on disk, and only the ones used are fetched), 23 kB portrait.

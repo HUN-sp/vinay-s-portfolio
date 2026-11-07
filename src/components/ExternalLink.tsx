@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { Link } from '../data';
+import { ArrowIcon } from './Icons';
 
 const isExternal = (href: string) => /^https?:\/\//.test(href);
 
@@ -23,9 +24,7 @@ export function LinkPill({ link }: { link: Link }) {
   return (
     <A href={link.href} className="pill">
       {link.label}
-      <span aria-hidden="true" className="pill__arrow">
-        ↗
-      </span>
+      <ArrowIcon />
     </A>
   );
 }

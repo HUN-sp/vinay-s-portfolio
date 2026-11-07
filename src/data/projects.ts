@@ -6,6 +6,7 @@ const PC = 'https://github.com/HUN-sp/ai-persona-chat';
 export const caseStudies: CaseStudy[] = [
   {
     id: 'sourcemind',
+    tone: 'blue',
     title: 'SourceMind',
     tagline: 'Grounded question answering over financial PDFs',
     problem:
@@ -40,6 +41,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'ai-persona-chat',
+    tone: 'warm',
     title: 'AI Persona Chat',
     tagline: 'An AI representative that answers questions about me and books interview slots',
     problem:
@@ -73,6 +75,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'aadhaar-seva-radar',
+    tone: 'violet',
     title: 'Aadhaar Seva Radar',
     tagline: 'UIDAI Data Hackathon: where do child biometric updates lag behind enrolments?',
     problem:

@@ -25,22 +25,17 @@ export const profile: Profile = {
     leetcode: 'https://leetcode.com/u/Vinay_Chopra-2003/',
   },
 
-  highlights: [
-    {
-      value: '1,925',
-      label: 'golden eval cases across 16 issuers, built at Thriftstone',
-      href: '#experience',
-    },
-    {
-      value: '5',
-      label: 'merged PRs in GRASS GIS, including a parallelized resampler (up to ~4.7×)',
-      href: '#open-source',
-    },
-    {
-      value: '10',
-      label: 'questions in SourceMind’s eval: 6 correct, 2 correct refusals, 1 wrong, 1 false refusal, all published',
-      href: '#projects',
-    },
+  tagline: {
+    prefix: 'I build',
+    words: ['grounded', 'evaluation-first', 'measured'],
+    suffix: 'AI systems.',
+  },
+
+  heroCards: [
+    { value: '1,925', label: 'golden eval cases across 16 issuers, built at Thriftstone', href: '#experience', tone: 'blue' },
+    { value: '5', label: 'merged PRs in GRASS GIS. Resampler up to ~4.7× speedup', href: '#open-source', tone: 'warm' },
+    { value: '6 · 2 · 1 · 1', label: 'SourceMind eval: correct, correct refusals, wrong, false refusal', href: '#projects', tone: 'violet' },
+    { value: '~1.4 s', label: 'to first spoken response in AI Persona Chat (manual test)', href: '#projects', tone: 'blue' },
   ],
 
   // The internship ended in Oct 2026, so the status line above is a fact, not "currently".

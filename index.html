@@ -9,8 +9,8 @@
       content="Vinay Kumar Chopra builds evaluation-first, grounded AI systems (RAG, agents, evals) and contributes C and Python to open-source GRASS GIS. Experience, projects with real evals, and contact."
     />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#0d0e10" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#070b18" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6fbff" media="(prefers-color-scheme: light)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="%SITE_URL%/" />
 
@@ -27,7 +27,7 @@
     <meta property="og:image:alt" content="Vinay Kumar Chopra, AI engineer. Evaluation-first, grounded AI systems." />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Set theme before first paint to avoid a flash. Dark unless the system asks for light. -->
+    <!-- Set theme before first paint to avoid a flash. Light unless the system asks for dark. -->
     <script>
       (function () {
         var d = document.documentElement;
@@ -35,15 +35,16 @@
         try {
           var t = localStorage.getItem('theme');
           if (t !== 'light' && t !== 'dark') {
-            t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           }
           d.dataset.theme = t;
         } catch (e) {}
       })();
     </script>
 
+    <link rel="preload" href="/src/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/src/assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/src/assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/src/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <div id="root"></div>

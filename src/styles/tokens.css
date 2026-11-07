@@ -1,9 +1,23 @@
 /* Fonts: Latin subsets only, self-hosted (SIL OFL, see LICENSE-*.txt next to the files). */
 @font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('../assets/fonts/bricolage-grotesque-latin-wght-normal.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: 'Instrument Serif';
   src: url('../assets/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('../assets/fonts/instrument-serif-latin-400-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 @font-face {
@@ -22,7 +36,8 @@
 }
 
 :root {
-  --font-display: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-display: 'Bricolage Grotesque', 'Geist', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
@@ -31,7 +46,8 @@
   --step-1: clamp(1.1875rem, 1.12rem + 0.3vw, 1.375rem);
   --step-2: clamp(1.5rem, 1.35rem + 0.7vw, 1.875rem);
   --step-3: clamp(1.875rem, 1.6rem + 1.3vw, 2.5rem);
-  --step-5: clamp(2.875rem, 2.1rem + 3.8vw, 5rem);
+  --step-4: clamp(2.25rem, 1.7rem + 2.6vw, 3.75rem);
+  --step-6: clamp(3rem, 1.6rem + 6vw, 6.25rem);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -41,64 +57,108 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4.5rem;
-  --space-section: clamp(3.5rem, 8vw, 7rem);
+  --space-section: clamp(4rem, 9vw, 8rem);
 
-  --radius: 12px;
-  --radius-sm: 8px;
+  --radius: 20px;
+  --radius-sm: 12px;
   --gutter: clamp(1rem, 5vw, 2rem);
-  --max: 68rem;
-  --header-h: 3.5rem;
+  --max: 72rem;
+  --header-h: 4rem;
 
-  /* Dark is the default. */
-  color-scheme: dark;
-  --bg: #0d0e10;
-  --bg-raised: #14161a;
-  --bg-code: #1b1e24;
-  --border: #272b34;
-  --border-strong: #3a404c;
-  --text: #ecebe7;
-  --text-2: #b9bdc4;
-  --muted: #9aa1ab;
-  --accent: #f2b45b; /* the one accent: text, lines, focus */
-  --accent-fill: #f2b45b; /* button background */
-  --accent-ink: #1b1305; /* text on --accent-fill */
-  --accent-soft: rgba(242, 180, 91, 0.12);
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+  /* Light is the default look. */
+  color-scheme: light;
+  --bg: #f6fbff;
+  --bg-sky-a: #e6f4ff;
+  --bg-sky-b: #d2e8fd;
+  --surface: #ffffff;
+  --surface-2: #eef6ff;
+  --border: #d3e2f3;
+  --border-strong: #aac2de;
+  --ink: #0b1224;
+  --text: #0b1224;
+  --text-2: #36405a;
+  --muted: #53607a;
+  --accent: #1c2bff; /* electric blue: text, lines, fills */
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(28, 43, 255, 0.08);
+  --accent-text: #1420d1;
+  --warm: #ff7a1a; /* orange: fills only */
+  --warm-ink: #1a0c00;
+  --warm-soft: rgba(255, 122, 26, 0.13);
+  --warm-text: #9a4000;
+  --violet: #6b3df2;
+  --violet-soft: rgba(107, 61, 242, 0.09);
+  --violet-text: #5528d6;
+  --btn: #0b1224; /* primary button */
+  --btn-ink: #ffffff;
+  --band-dark: #070d1f;
+  --band-dark-text: #eef1ff;
+  --band-dark-muted: #a9b2d3;
+  --code-bg: rgba(11, 18, 36, 0.07);
+  --shadow: 0 1px 2px rgba(11, 18, 36, 0.05), 0 18px 40px -22px rgba(28, 43, 255, 0.28);
+  --shadow-lift: 0 2px 4px rgba(11, 18, 36, 0.06), 0 26px 50px -20px rgba(28, 43, 255, 0.38);
 }
 
-:root[data-theme='light'] {
-  color-scheme: light;
-  --bg: #fbfaf7;
-  --bg-raised: #ffffff;
-  --bg-code: #f0eee8;
-  --border: #e6e2d8;
-  --border-strong: #cdc7b8;
-  --text: #17181b;
-  --text-2: #3b4048;
-  --muted: #565c66;
-  --accent: #8a4e00;
-  --accent-fill: #f0b050;
-  --accent-ink: #1b1305;
-  --accent-soft: rgba(138, 78, 0, 0.09);
-  --shadow: 0 1px 2px rgba(23, 24, 27, 0.04), 0 12px 32px -20px rgba(23, 24, 27, 0.25);
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #070b18;
+  --bg-sky-a: #0a112b;
+  --bg-sky-b: #0d173d;
+  --surface: #0f1631;
+  --surface-2: #141c3d;
+  --border: #232d57;
+  --border-strong: #3a4784;
+  --ink: #eef1ff;
+  --text: #eef1ff;
+  --text-2: #b9c1de;
+  --muted: #929cbf;
+  --accent: #8c9aff;
+  --accent-ink: #070b18;
+  --accent-soft: rgba(140, 154, 255, 0.14);
+  --accent-text: #aab5ff;
+  --warm: #ff8a33;
+  --warm-ink: #1a0c00;
+  --warm-soft: rgba(255, 138, 51, 0.14);
+  --warm-text: #ffac6b;
+  --violet: #b79cff;
+  --violet-soft: rgba(183, 156, 255, 0.14);
+  --violet-text: #c9b5ff;
+  --btn: #eef1ff;
+  --btn-ink: #070b18;
+  --band-dark: #04060f;
+  --code-bg: rgba(238, 241, 255, 0.1);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 18px 40px -22px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 26px 50px -20px rgba(0, 0, 0, 0.85);
 }
 
 /* No-JS fallback: follow the system if the inline script didn't set a theme. */
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    color-scheme: light;
-    --bg: #fbfaf7;
-    --bg-raised: #ffffff;
-    --bg-code: #f0eee8;
-    --border: #e6e2d8;
-    --border-strong: #cdc7b8;
-    --text: #17181b;
-    --text-2: #3b4048;
-    --muted: #565c66;
-    --accent: #8a4e00;
-    --accent-fill: #f0b050;
-    --accent-ink: #1b1305;
-    --accent-soft: rgba(138, 78, 0, 0.09);
-    --shadow: 0 1px 2px rgba(23, 24, 27, 0.04), 0 12px 32px -20px rgba(23, 24, 27, 0.25);
+    color-scheme: dark;
+    --bg: #070b18;
+    --bg-sky-a: #0a112b;
+    --bg-sky-b: #0d173d;
+    --surface: #0f1631;
+    --surface-2: #141c3d;
+    --border: #232d57;
+    --border-strong: #3a4784;
+    --ink: #eef1ff;
+    --text: #eef1ff;
+    --text-2: #b9c1de;
+    --muted: #929cbf;
+    --accent: #8c9aff;
+    --accent-ink: #070b18;
+    --accent-soft: rgba(140, 154, 255, 0.14);
+    --accent-text: #aab5ff;
+    --warm: #ff8a33;
+    --warm-soft: rgba(255, 138, 51, 0.14);
+    --warm-text: #ffac6b;
+    --violet: #b79cff;
+    --violet-soft: rgba(183, 156, 255, 0.14);
+    --violet-text: #c9b5ff;
+    --btn: #eef1ff;
+    --btn-ink: #070b18;
+    --band-dark: #04060f;
+    --code-bg: rgba(238, 241, 255, 0.1);
   }
 }

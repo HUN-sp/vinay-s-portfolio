@@ -4,6 +4,8 @@
  * visible chip on the page and is listed by `npm run todos`.
  */
 
+export type Tone = 'blue' | 'warm' | 'violet';
+
 export type LinkKind = 'repo' | 'live' | 'doc' | 'pr' | 'external';
 
 export interface Link {
@@ -31,8 +33,10 @@ export interface Profile {
     linkedin: string;
     leetcode: string;
   };
-  /** Three proof points shown under the hero. Each links to the section that backs it up. */
-  highlights: { value: string; label: string; href: string }[];
+  /** Hero headline: "{prefix} <rotating word> {suffix}". */
+  tagline: { prefix: string; words: string[]; suffix: string };
+  /** Floating proof-point cards around the hero. Each links to the section that backs it up. */
+  heroCards: { value: string; label: string; href: string; tone: Tone }[];
   /** Optional availability line. Leave undefined to hide. */
   availability?: string;
   todos?: string[];
@@ -43,7 +47,11 @@ export interface Experience {
   role: string;
   location: string;
   period: string;
+  /** One line under the role. */
+  summary: string;
   bullets: string[];
+  /** Short skill/topic chips. Only terms that appear in the bullets. */
+  tags: string[];
 }
 
 export interface PullRequest {
@@ -57,7 +65,6 @@ export interface PullRequest {
 export interface OpenSource {
   project: string;
   org: string;
-  intro: string;
   stack: string[];
   headlineStat: Stat;
   pullRequests: PullRequest[];
@@ -66,6 +73,7 @@ export interface OpenSource {
 
 export interface CaseStudy {
   id: string;
+  tone: Tone;
   title: string;
   tagline: string;
   problem: string;
@@ -106,4 +114,13 @@ export interface SkillGroup {
 export interface About {
   paragraphs: string[];
   todos?: string[];
+}
+
+export interface SectionCopy {
+  id: string;
+  /** Label in the header navigation. */
+  nav: string;
+  title: string;
+  /** Italic line under the title. */
+  lead: string;
 }

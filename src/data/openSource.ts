@@ -5,8 +5,6 @@ const PR = (n: number) => `https://github.com/OSGeo/grass/pull/${n}`;
 export const openSource: OpenSource = {
   project: 'GRASS GIS',
   org: 'OSGeo',
-  intro:
-    'Five merged pull requests into the GRASS GIS C and Python codebase, in milestones 8.5.0 and 8.6.0. Each one links to the PR, so the review history is public.',
   stack: ['C', 'Python', 'pytest', 'OpenMP', 'gprof', 'GCC / Clang'],
   headlineStat: { value: '~4.7×', label: 'up to, on the parallelized `r.resamp.stats`' },
 
